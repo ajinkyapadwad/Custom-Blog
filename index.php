@@ -1,5 +1,9 @@
+<?php include 'config/config.php' ?>
+<?php include 'libraries/Database.php' ?>
 <?php include 'includes/header.php' ?>
-
+<?php
+  $db = new Database();
+?>
   <body>
 
     <div class="blog-masthead">
