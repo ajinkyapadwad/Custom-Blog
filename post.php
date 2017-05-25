@@ -57,7 +57,7 @@
               <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
             </ol>
             <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-            <a class="readmore" href="post.php"> Read more...</a>
+            <a class="readmore" href="posts.php"> Read more...</a>
           </div><!-- /.blog-post -->
 
           <nav>
