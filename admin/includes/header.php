@@ -1,4 +1,7 @@
-
+<?php include '../config/config.php' ?>
+<?php include '../libraries/Database.php' ?>
+<?php include '../includes/header.php' ?>
+<?php include '../helpers/format_helper.php' ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,14 +16,33 @@
     <title>Custom Blog</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/blog.css" rel="stylesheet">
+    <link href="../css/blog.css" rel="stylesheet">
 
-  
+ <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="index.php">Dashboard</a>
+          <a class="blog-nav-item" href="add_post.php">Add posts</a>
+          <a class="blog-nav-item" href="add_category.php">Add categories</a>
+          <a class="blog-nav-item" href="http:://localhost/Custom-Blog">Go to Rutgers Blog</a>
+        </nav>
+      </div>
+    </div>
 
-  </head>
+    <div class="container">
+
+      <div class="blog-header">
+      <div class="logo">
+        <img src="../images/rlogo.png" height="120" width="120">
+      </div>
+        <h1 class="blog-title">Admin Central</h1>
+        <p class="lead blog-description">Admin page for CRUD.</p>
+      </div>
+
+<div class="col-sm-12 blog-main">

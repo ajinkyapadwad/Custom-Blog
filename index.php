@@ -1,13 +1,16 @@
 <?php include 'config/config.php' ?>
 <?php include 'libraries/Database.php' ?>
 <?php include 'includes/header.php' ?>
+<?php include 'helpers/format_helper.php' ?>
 <?php
   $db = new Database();
 
   //query
   $query = "SELECT * FROM posts";
-
   $posts = $db->select($query);
+
+  $query = "SELECT * FROM categories";
+  $categories = $db->select($query);
 ?>
 <?php if($posts): ?>
 
@@ -44,18 +47,22 @@
             <h2 class="blog-post-title">
               <?php echo $row['title']; ?>
             </h2>
+
             <p class="blog-post-meta">
-            <?php echo $row['time']; ?>
-            <a href="#">
+              <?php echo Fdate($row['time']); ?>
+            
+              <a href="#">
               <?php echo $row['author']; ?>
-            </a></p>
+              </a>
+            </p>
 
-           <?php echo $row['body'];  ?>
-
-
-            <a class="readmore" href="posts.php"> Read more...</a>
+           <?php echo Fbody($row['body']);  ?>
+          
+          <a class="readmore" 
+          href="posts.php?id=<?php echo urldecode($row['id']); ?>"?> Read more...</a>
+          
           </div><!-- /.blog-post -->
-        <?php endwhile; ?>
+          <?php endwhile; ?>
          <nav>
             <ul class="pager">
               <li><a href="#">Previous</a></li>
@@ -68,16 +75,17 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+            <p><?php echo $about; ?></p>
           </div>
           <div class="sidebar-module">
             <h4>Index</h4>
             <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-    
+            <?php while($row=$categories->fetch_assoc()) :?>
+              <li><a href="#">
+              <?php echo $row['name'] ;?>
+              </a>
+              </li>
+            <?php endwhile; ?>
             </ol>
           </div>
           <div class="sidebar-module">

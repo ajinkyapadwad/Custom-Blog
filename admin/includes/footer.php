@@ -1,4 +1,9 @@
- <footer class="blog-footer">
+
+
+</div>
+
+
+     <footer class="blog-footer">
       <p>&copy; The Rutgers Blog <a href="https://github.com/ajinkyapadwad"></a> by <a href="https://github.com/ajinkyapadwad">AJ</a>.</p>
       <p>
         <a href="#">Back to top</a>
@@ -15,3 +20,4 @@
 
   </body>
 </html>
+
