@@ -55,6 +55,40 @@
 			if($insert_row)
 			{
 				header("Location : index.php?msg=".urlencode('Added Successfully!'));
+				exit();
+			}
+			else
+			{
+				die ($this->error.__LINE__);
+			}
+		}
+
+		//update
+		public function update($query)
+		{
+			$update_row = $this->link->query($query) or die ($this->error.__LINE__);
+			if($update_row)
+			{
+				header("Location : index.php?msg=".urlencode('Updated Successfully!'));
+				exit();
+			}
+			else
+			{
+				die ($this->error.__LINE__);
+			}
+		}
+				//insert
+		public function delete($query)
+		{
+			$delete_row = $this->link->query($query) or die ($this->error.__LINE__);
+			if($delete_row)
+			{
+				header("Location : index.php?msg=".urlencode('Deleted Successfully!'));
+				exit();
+			}
+			else
+			{
+				die ($this->error.__LINE__);
 			}
 		}
 	}
